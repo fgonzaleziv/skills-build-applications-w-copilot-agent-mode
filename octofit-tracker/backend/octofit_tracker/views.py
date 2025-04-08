@@ -27,10 +27,11 @@ class WorkoutViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def api_root(request, format=None):
+    base_url = request.build_absolute_uri('/')
     return Response({
-        'users': '/api/users/',
-        'teams': '/api/teams/',
-        'activity': '/api/activity/',
-        'leaderboard': '/api/leaderboard/',
-        'workouts': '/api/workouts/',
+        'users': f'{base_url}api/users/',
+        'teams': f'{base_url}api/teams/',
+        'activity': f'{base_url}api/activity/',
+        'leaderboard': f'{base_url}api/leaderboard/',
+        'workouts': f'{base_url}api/workouts/',
     })
