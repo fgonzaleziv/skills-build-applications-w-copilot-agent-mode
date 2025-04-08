@@ -27,7 +27,7 @@ class WorkoutViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = request.build_absolute_uri('/')
+    base_url = "https://friendly-space-waffle-pjx5rvqwqvpf7w7x-8000.app.github.dev/"
     return Response({
         'users': f'{base_url}api/users/',
         'teams': f'{base_url}api/teams/',
